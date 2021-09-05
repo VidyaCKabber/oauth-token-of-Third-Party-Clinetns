@@ -11,13 +11,24 @@ cdata_plugin_oauth_tokens
   | plugin_id | integration | connection_json  |   request_url |
   |:---------|:---------------------|:---------------|:--------- |
   | 1  | Salesforce  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} | https://login.salesforce.com/services/oauth2/token |
-  | 2  | Hubspot  | */30 * * * *   username   /usr/bin/python3 <update_tokens.py file path> --update xero >> <scheduler.log file path> 2>&1 | ad |
-  | 3  | Google_Analytics  | */30 * * * *   username   /usr/bin/python3 <update_tokens.py file path> --update xero >> <scheduler.log file path> 2>&1 | ad |
-  | 4  | Xero  | */30 * * * *   username   /usr/bin/python3 <update_tokens.py file path> --update xero >> <scheduler.log file path> 2>&1 | ad |
-  | 5  | MailChimp  | */30 * * * *   username   /usr/bin/python3 <update_tokens.py file path> --update xero >> <scheduler.log file path> 2>&1 | ad |
-  | 6  | Validate_Bigquery  | */30 * * * *   username   /usr/bin/python3 <update_tokens.py file path> --update xero >> <scheduler.log file path> 2>&1 | ad |
-  | 7 | Run_Bigquery  | */30 * * * *   username   /usr/bin/python3 <update_tokens.py file path> --update xero >> <scheduler.log file path> 2>&1 | ad |
-           
+  | 2  | Hubspot  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} | https://api.hubapi.com/oauth/v1/token |
+  | 3  | Google_Analytics  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} | https://www.googleapis.com/oauth2/v4/token |
+  | 4  | Xero  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} | https://identity.xero.com/connect/token |
+  | 5  | MailChimp  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} |  |
+  | 6  | Validate_Bigquery  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} | https://accounts.google.com/o/oauth2/token |
+  | 7 | Run_Bigquery  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} | https://accounts.google.com/o/oauth2/token |
+ 
+ cdata_plugin_oauth_tokens
+  -----
+  | plugin_id | integration | connection_json  |   request_url |
+  |:---------|:---------------------|:---------------|:--------- |
+  | 1  | Salesforce  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} | https://login.salesforce.com/services/oauth2/token |
+  | 2  | Hubspot  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} | https://api.hubapi.com/oauth/v1/token |
+  | 3  | Google_Analytics  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} | https://www.googleapis.com/oauth2/v4/token |
+  | 4  | Xero  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} | https://identity.xero.com/connect/token |
+  | 5  | MailChimp  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} |  |
+  | 6  | Validate_Bigquery  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} | https://accounts.google.com/o/oauth2/token |
+  | 7 | Run_Bigquery  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} | https://accounts.google.com/o/oauth2/token |
 
 # Scripts
 
