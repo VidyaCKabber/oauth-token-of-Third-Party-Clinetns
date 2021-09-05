@@ -10,13 +10,13 @@ cdata_user_details
   -----
   | id | username | password  |   oauthclientid | oauthclientsecret |
   |:---------|:---------------------|:---------------|:-----------|:-------------|
-  | 1  | Username  | Password | https://login.salesforce.com/services/oauth2/token | |
-  | 2  | Username  | Password | https://api.hubapi.com/oauth/v1/token | |
-  | 3  | Username  | Password | https://www.googleapis.com/oauth2/v4/token | |
-  | 4  | Username  | Password | https://identity.xero.com/connect/token | |
+  | 1  | Username  | Password |  |  |
+  | 2  | Username  | Password |  |  |
+  | 3  | Username  | Password |  |  |
+  | 4  | Username  | Password |  |  |
   | 5  | Username  | Password |  |  |
-  | 6  | Username  | Password | https://accounts.google.com/o/oauth2/token | |
-  | 7  | Username  | Password | https://accounts.google.com/o/oauth2/token | |
+  | 6  | Username  | Password |  |  |
+  | 7  | Username  | Password |  |  |
  
  cdata_plugin_oauth_tokens
   -----
