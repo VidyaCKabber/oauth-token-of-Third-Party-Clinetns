@@ -5,6 +5,21 @@ This folder contains codebase for updating the data third-party plugins access t
 - A POST request will make to the service’s token endpoint with grant_type=refresh_token.
 - Implemented this feature for Salesforce, Hubspot, google analytics and Xero plugins.
 
+# Postgre SQL Table
+cdata_plugin_oauth_tokens
+  -----
+  | plugin_id | integration | connection_json  |   request_url |
+  |:---------|:---------------------|:---------------|:--------- |
+  | Xero  | 30 minutes  | */30 * * * *   username   /usr/bin/python3 <update_tokens.py file path> --update xero >> <scheduler.log file path> 2>&1 | ad |
+  | Xero  | 30 minutes  | */30 * * * *   username   /usr/bin/python3 <update_tokens.py file path> --update xero >> <scheduler.log file path> 2>&1 | ad |
+  | Xero  | 30 minutes  | */30 * * * *   username   /usr/bin/python3 <update_tokens.py file path> --update xero >> <scheduler.log file path> 2>&1 | ad |
+  | Xero  | 30 minutes  | */30 * * * *   username   /usr/bin/python3 <update_tokens.py file path> --update xero >> <scheduler.log file path> 2>&1 | ad |
+  | Xero  | 30 minutes  | */30 * * * *   username   /usr/bin/python3 <update_tokens.py file path> --update xero >> <scheduler.log file path> 2>&1 | ad |
+  | Xero  | 30 minutes  | */30 * * * *   username   /usr/bin/python3 <update_tokens.py file path> --update xero >> <scheduler.log file path> 2>&1 | ad |
+  | Xero  | 30 minutes  | */30 * * * *   username   /usr/bin/python3 <update_tokens.py file path> --update xero >> <scheduler.log file path> 2>&1 | ad |
+  | Xero  | 30 minutes  | */30 * * * *   username   /usr/bin/python3 <update_tokens.py file path> --update xero >> <scheduler.log file path> 2>&1 | ad |
+           
+
 # Scripts
 
 Support to update and clear the access_token based on command line argument.
