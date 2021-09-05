@@ -1,2 +1,41 @@
-# oauth-token-of-Third-Party-Clinetns
-Refresh access tokens of varies for third-party client salesforce, hubspot, google_analytics, xero and google_bigquery. Store them into PostgreSql table and use it whenever you required it.
+# Overview
+
+This folder contains codebase for updating the data third-party plugins access token through stored refresh_token.We have to refresh tokens when it get expired and update with new tokens.There must to be some scheduler to watch this periodically. To achieve it, We use CRON, which is time-based job scheduling daemon found in Unix-like operating systems.Cron executed automatically for a set time period in the background and update the access token which is stored in json format on POSTGRES server.
+- The update_plugins.py accepts command line arguments to run intended tasks on set time and date.Later we use stored access tokens to perform authentication and authorization for cdata third-party plugins.
+- A POST request will make to the service’s token endpoint with grant_type=refresh_token.
+- Implemented this feature for Salesforce, Hubspot, google analytics and Xero plugins.
+
+# Scripts
+
+Support to update and clear the access_token based on command line argument.
+
+1. List integrated plugins
+   - Command line argument "--list" passed to update_plugins.py to list all supportive plugins.
+   - update_plugins.py --list
+
+2. Update access tokens
+   - Command line argument "--update <api_name>" passed to update_plugins.py to update / replace existing access token by requesting authorization server using  refresh token of the plugin.
+   - update_plugins.py --update <api_name>
+
+3. Clear access token
+   - Command line argument "--clear <api_name>" passed to update_plugins.py to clear saved access tokens of the plugin.
+   - update_plugins.py --clear <api_name>
+
+
+# Cron Job
+
+- Access Tokens of the plugin should be updated periodically as it expires within a specific time period. To active this, we use Cron software utility is a time-based job scheduler in Unix-like operating systems.
+- Cron allows Linux users to run scripts at a given time and date. After successful execution, connection json data edited in the script and updated to Postgresql server and job logs are written into schedular.log file.
+- If in case any failure, then also failure logs are written into the schedular.log file with failed time.
+
+  Token expiration time for each plugins 
+  -----
+  | Integration | Expiration Time (Every)          | Cron Job  |
+  |:---------|:---------------------|:---------------|
+  | Xero  | 30 minutes  | */30 * * * *   username   /usr/bin/python3 <update_tokens.py file path> --update xero >> <scheduler.log file path> 2>&1 |
+  | Google Analytics    | 30 minutes  | */30 * * * *   username   /usr/bin/python3 <update_tokens.py file path> --update google_analytics >> <scheduler.log file path> 2>&1           |
+  | Saleforce   | 2 hours | 0 */2 * * *   username   /usr/bin/python3 <update_tokens.py file path> --update salesforce >> <scheduler.log file path> 2>&1|
+  | Hubspot   | 6 hours  | * 0 */6 * * *   username   /usr/bin/python3 <update_tokens.py file path> --update hubspot >> <scheduler.log file path> 2>&1           |
+
+  
+  
