@@ -6,17 +6,17 @@ This folder contains codebase for updating the data third-party plugins access t
 - Implemented this feature for Salesforce, Hubspot, google analytics and Xero plugins.
 
 # Postgre SQL Tables
-cdata_plugin_oauth_tokens
+cdata_user_details
   -----
-  | plugin_id | integration | connection_json  |   request_url |
-  |:---------|:---------------------|:---------------|:--------- |
-  | 1  | Salesforce  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} | https://login.salesforce.com/services/oauth2/token |
-  | 2  | Hubspot  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} | https://api.hubapi.com/oauth/v1/token |
-  | 3  | Google_Analytics  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} | https://www.googleapis.com/oauth2/v4/token |
-  | 4  | Xero  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} | https://identity.xero.com/connect/token |
-  | 5  | MailChimp  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} |  |
-  | 6  | Validate_Bigquery  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} | https://accounts.google.com/o/oauth2/token |
-  | 7 | Run_Bigquery  | {'access_token':your_access_token, 'refresh_token': your_refresh_token} | https://accounts.google.com/o/oauth2/token |
+  | id | username | password  |   oauthclientid | oauthclientsecret |
+  |:---------|:---------------------|:---------------|:-----------|:-------------|
+  | 1  | Username  | Password | https://login.salesforce.com/services/oauth2/token | |
+  | 2  | Username  | Password | https://api.hubapi.com/oauth/v1/token | |
+  | 3  | Username  | Password | https://www.googleapis.com/oauth2/v4/token | |
+  | 4  | Username  | Password | https://identity.xero.com/connect/token | |
+  | 5  | Username  | Password |  |  |
+  | 6  | Username  | Password | https://accounts.google.com/o/oauth2/token | |
+  | 7  | Username  | Password | https://accounts.google.com/o/oauth2/token | |
  
  cdata_plugin_oauth_tokens
   -----
